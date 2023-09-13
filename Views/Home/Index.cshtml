@@ -1,0 +1,17 @@
+﻿@using VendingMachine.Models
+@model IQueryable<Drink>
+
+<div class="row mt-5 mb-2">
+    @{
+        foreach (var drink in Model)
+        {
+            <div class="col-lg-1">
+                <h2>@drink.Name</h2>
+                <img width="200" height="200" class="img-thumbnail" src="@drink.Img" alt="@drink.Name" />
+                <p>Колличество: @drink.Qty</p>
+                <p>Цена: @drink.Price.ToString("c")</p>
+                <p><a class="btn btn-warning">Купить</a></p>
+            </div>
+        }
+    }
+</div>

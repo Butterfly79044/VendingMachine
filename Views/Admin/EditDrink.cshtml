@@ -1,0 +1,36 @@
+﻿@using VendingMachine.Models
+@model Drink
+
+<div class="text-center">
+    <div>
+        <form asp-controller="Admin" asp-action="EditDrink" method="post">
+            <input type="hidden" asp-for="ID"/>
+            <div asp-validation-summary="All"></div>
+
+            <div>
+                <label asp-for="Name"></label>
+                <input asp-for="Name" />
+                <span asp-validation-for="Name"></span>
+            </div>
+
+            <div>
+                <label asp-for="Img"></label>
+                <input asp-for="Img" />
+                <span asp-validation-for="Img"></span>
+            </div>
+
+            <div>
+                <label asp-for="Qty"></label>
+                <input asp-for="Qty" />
+                <span asp-validation-for="Qty"></span>
+            </div>
+
+            <div>
+                <label asp-for="Price"></label>
+                <input asp-for="Price" />
+                <span asp-validation-for="Price"></span>
+            </div>
+            <input type="submit" value="Готово"/>
+        </form>
+    </div>
+</div>

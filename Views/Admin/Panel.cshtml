@@ -1,0 +1,23 @@
+﻿@using VendingMachine.Models
+@model IQueryable<Drink>
+<head>
+        <a class="btn btn-warning" asp-controller="Admin" asp-action="EditDrink">Добавить напиток</a>
+</head>
+
+<div class="row mt-5 mb-2">
+    @{
+        foreach (var drink in Model)
+        {
+            <div class="col-lg-1">
+                @drink.Name
+
+                <a class="btn btn-warning" asp-controller="Admin" asp-action="EditDrink" asp-route-id="@drink.ID">Редактировать</a>
+
+                <form method="post" asp-controller="Admin" asp-action="DeleteDrink">
+                    <input type="hidden" value="@drink.ID" name="ID"/>
+                    <input class="btn btn-warning" type="submit" value="Удалить" />
+                </form>
+            </div>
+        }
+    }
+</div>
